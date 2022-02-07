@@ -15,12 +15,12 @@ def result_youtube():
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.youtube.com/")
-
+    time.sleep(10)
     Actions = ActionChains(driver)
 
     searchBar = driver.find_element(By.XPATH, "//*[@id='search']")
     searchBar.send_keys("Music")
-    time.sleep(5)
+    time.sleep(10)
 
     searchBar.send_keys(Keys.ENTER)
 
@@ -32,4 +32,4 @@ def result_youtube():
     time.sleep(30)
     driver.close()
     driver.quit()
-    # return total_counts
+    return total_counts
